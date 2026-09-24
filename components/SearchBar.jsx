@@ -18,15 +18,14 @@ export default function SearchBar({ initialValue = "", large = false }) {
       return;
     }
     notify(`Searching the catalog for “${query}”`, "info");
-    const p = new URLSearchParams({ search: query });
-    router.push(`/games?${p.toString()}`);
+    router.push(`/games?${new URLSearchParams({ search: query }).toString()}`);
   }
 
   return (
     <form onSubmit={submit} role="search" className="w-full">
       <div className={`search-shell flex items-center gap-3 ${large ? "py-4" : "py-3"}`}>
-        <Search className="h-4 w-4 shrink-0 search-icon" />
-        <input value={value} onChange={(e) => setValue(e.target.value)} placeholder="Search games..." aria-label="Search games" className="w-full bg-transparent text-sm outline-none" />
+        <Search className="search-icon h-4 w-4 shrink-0" />
+        <input value={value} onChange={(e) => setValue(e.target.value)} placeholder="Search games, genres or titles..." aria-label="Search games" className="w-full bg-transparent text-sm outline-none" />
         <button className="search-button" type="submit">Search</button>
       </div>
     </form>
