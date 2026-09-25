@@ -25,6 +25,8 @@ export default function RootLayout({ children }) {
             <Footer />
           </div>
         </Providers>
+
+    <script src="https://cdn.zanderio.ai/widget/loader.js" data-id="wdg_eIAdDcLU0z82BSYyBUhq7Dxj" defer></script>
       </body>
     </html>
   );
